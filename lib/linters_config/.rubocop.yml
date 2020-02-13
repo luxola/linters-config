@@ -1,0 +1,121 @@
+# To view problems:         rubocop
+# To autofix:               rubocop -a
+# To autofix certain rule:  rubocop -a --only Module/Rule
+
+inherit_from:
+  # To generate .rubocop_todo.yml, run rubocop --auto-gen-config
+  - .rubocop_todo.yml
+  # If you have anything that you don't intend to fix
+  - .rubocopignore.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  # If you are using minitest
+  - rubocop-minitest
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'test/fixtures/**/*'
+    - 'lib/tasks/migration/*.rake'
+    - 'lib/tasks/one_off/*.rake'
+    - 'lib/tasks/shovel.rake'
+    - 'db/schema.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/Documentation:
+  Enabled: false
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+Layout/LineLength:
+  Max: 120
+
+Layout/SpaceAroundOperators:
+  EnforcedStyleForExponentOperator: space
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: compact
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: compact
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/SuppressedException:
+  AllowComments: true
+
+Lint/UnusedBlockArgument:
+  IgnoreEmptyBlocks: false
+
+Lint/UnusedMethodArgument:
+  IgnoreEmptyMethods: false
+
+Naming/MethodParameterName:
+  MinNameLength: 1
+
+Naming/PredicateName:
+  Enabled: false
+
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/RefuteMethods:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: sprintf
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/PreferredHashMethods:
+  EnforcedStyle: verbose
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: true
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
