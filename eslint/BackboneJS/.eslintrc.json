@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "extends": [
+    "standard",
+    "plugin:promise/recommended"
+  ],
+  "globals": {
+    "bugsnag": "readonly",
+    "Backbone": "readonly",
+    "JST": "readonly",
+    "App": "readonly",
+    "ActionCable": "readonly"
+  },
+  "parser": "eslint-plugin-coffeescript",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "coffeescript",
+    "promise"
+  ],
+  "ignorePatterns": [
+    "*.jst.skim"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "promise/always-return": "off"
+  }
+}

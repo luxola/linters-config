@@ -1,0 +1,5 @@
+vendor/**
+node_modules/**
+public/**
+coverage/**
+app/assets/stylesheets/application.scss

@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "jest": true
+  },
+  "extends": [
+    "standard",
+    "standard-react",
+    "plugin:react/recommended",
+    "plugin:react-redux/recommended",
+    "plugin:react-perf/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:promise/recommended",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "bugsnag": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.3.2"
+    }
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "import",
+    "jsx",
+    "react-redux",
+    "react-perf",
+    "promise",
+    "jest"
+  ],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // JSX specific linting rules for ESLint
+    "jsx/uses-factory": [
+      1,
+      {
+        "pragma": "JSX"
+      }
+    ],
+    "jsx/mark-used-vars": 1
+  }
+}
